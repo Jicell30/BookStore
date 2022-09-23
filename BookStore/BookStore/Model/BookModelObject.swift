@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Book{
+class Book {
     
     var author: String
     var title: String
@@ -24,3 +24,13 @@ class Book{
     }
     
 } // End of class.
+
+extension Book: Equatable {
+    static func == (lhs: Book, rhs: Book) -> Bool {
+        return lhs.title == rhs.title &&
+        lhs.author == rhs.author &&
+        lhs.lastUpdated == rhs.lastUpdated &&
+        lhs.rating == rhs.rating &&
+        lhs.synopsis == rhs.synopsis
+    }
+}
